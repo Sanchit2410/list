@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+      table {
+        width: 700px;
+      }
+      td,
+      th {
+        width: 70px;
+      }
+    </style>
+    
+  </head>
+
+  <body onload="showData()">
+    <h1
+      class="text-white text-center font-weight-bold bg-success py-2"
+      style="font-size: 55px"
+    >
+      Signup Form
+    </h1>
+
+    <!-- HTML Formats for the sign up page -->
+    <div class="container">
+      <br />
+
+      <div class="col-lg-6 m-auto d-block">
+        <form action="" onsubmit="return validation()" class="bg-light row">
+          <div class="form-group col-6">
+            <label for="firstName" class="font-weight-bold">
+              First Name:
+            </label>
+            <input
+              type="text"
+              name="firstName"
+              class="form-control"
+              id="firstName"
+              autocomplete="off"
+            />
+            <span id="firstNameSpan" class="text-danger font-weight-bold">
+            </span>
+          </div>
+
+          <div class="form-group col-6">
+            <label for="secondName" class="font-weight-bold">
+              Second Name:
+            </label>
+            <input
+              type="text"
+              name="secondName"
+              class="form-control"
+              id="secondName"
+              autocomplete="off"
+            />
+            <span id="secondNameSpan" class="text-danger font-weight-bold">
+            </span>
+          </div>
+
+          <div class="form-group col-6">
+            <label class="font-weight-bold"> Age: </label>
+            <input
+              type="text"
+              name="mobile"
+              class="form-control"
+              id="age"
+              autocomplete="off"
+            />
+          </div>
+          <input
+            type="submit"
+            name="submit"
+            value="submit"
+            class="btn btn-success justify-self-center align-self-center col mx-3"
+            autocomplete="off"
+          />
+          <input
+            type="reset"
+            name="clear"
+            value="clear"
+            onclick="onClear()"
+            class="btn btn-success justify-self-center align-self-center col mx-3"
+          />
+        </form>
+        <br /><br />
+
+        <form name='searchResults' onsubmit="searchActivity(event);">
+            <div class="search-input">
+                <label for="search"><b>Enter query</b></label>
+                <input type="text" placeholder="Search" name="search" id="search">
+            </div>
+            <div>
+                <button value="Search" onclick="searchActivity(event);">Search</button>
+            </div>
+    
+            <div>
+                <h4 id="searchResults"></h4>
+            </div>
+
+        
+
+        <!-- Making a Table -->
+        <table border="4" id="show" class="row">
+          <thead>
+            <tr>
+              <th>S No.</th>
+              <th>First Name</th>
+              <th>Second Name</th>
+              <th>Age</th>
+              <th>Action1</th>
+              <th>Action2</th>
+            </tr>
+          </thead>
+          <tbody id="table_body"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+    </body>
+    </html>
+
